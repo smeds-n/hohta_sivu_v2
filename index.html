@@ -240,6 +240,15 @@
     font-weight: 500;
   }
 
+  .emphasis-hidden {
+    opacity: 0.6;
+    font-weight: 300;
+    font-style: italic;
+    display: block; /* Put it on its own line for rhythm */
+    margin-top: 0.5rem;
+    transition: opacity 2s ease;
+  }
+
 </style>
 </head>
 
@@ -248,7 +257,7 @@
 <section id="above_fold">
   <div class="hero-container">
   <div class="hero-content">
-    <h1>Investointisi tuottaa.<br>Hiljaa. Katolla. Piilossa.</h1>
+    <h1>Investointisi tuottaa.<br>Hiljaa. Katolla. <span class="emphasis-hidden">Piilossa.</span></h1>
     <h3>Muuta aurinkopaneelisi bränditeoksi. Vaivattomasti.</h3>
   </div>
   
