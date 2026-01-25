@@ -1,0 +1,40 @@
+# Tech Premium Palette ("Ice & Stone")
+Designed for: Corporate Lobbies, High-Tech Hardware, Seamless Integration with ThingsBoard.
+
+## Core Philosophy
+- **Neutrality:** The UI is a frame, not the art. It recedes to let the data/content shine.
+- **Precision:** Colors are cool, crisp, and engineered. No "cozy" warm tones.
+- **Lighting Safe:** Optimized for 4000K-6000K office LED lighting (won't look yellow/dirty).
+
+## The Palette
+
+### Backgrounds
+- **Pure White** (`#ffffff`)
+  *   Usage: Main page background, primary canvas.
+- **Vapor Gray** (`#f8f9fa`)
+  *   Usage: Secondary sections, "Peeking Card" background, subtle contrast against white.
+
+### Typography
+- **Obsidian** (`#111827`)
+  *   Usage: Primary Headings (H1, H2). High contrast but softer than pure black (`#000000`).
+- **Cool Gray** (`#4b5563`)
+  *   Usage: Body text, supporting descriptions.
+- **Slate** (`#9ca3af`)
+  *   Usage: Meta text, placeholders, inactive states.
+
+### Accents & UI Elements
+- **Midnight** (`#0f172a`)
+  *   Usage: Primary Buttons (Solid), Strong Borders.
+  *   *Note:* Connects visually to "hardware" or "dark mode" dashboards.
+- **Platinum** (`#e5e7eb`)
+  *   Usage: Subtle borders, dividers, card outlines.
+- **Signal Blue** (ThingsBoard Bridge)
+  *   *Optional:* Use the specific ThingsBoard blue ONLY for the "Login" / "Dashboard" button to signal the transition.
+
+## Implementation Notes
+1.  **Shadows:** Use cool-toned shadows.
+    *   `box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);`
+2.  **Typography:** Stick to geometric Sans-Serif (Inter, Roboto, Manrope).
+3.  **The "Peeking Card":**
+    *   Background: `#f8f9fa` (Vapor Gray)
+    *   Border-top: `1px solid #e5e7eb`
