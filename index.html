@@ -1,462 +1,98 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hohta – Aurinkovoima Bränditeoksi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    /* Tech Premium Palette ("Ice & Stone") */
-    --bg-main: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --text-primary: #111827; /* Obsidian */
-    --text-secondary: #4b5563; /* Cool Gray */
-    --accent-dark: #0f172a; /* Midnight */
-    --accent-light: #e5e7eb; /* Platinum */
-    --bridge-blue: #2a7de1; /* ThingsBoard Bridge (Optional) */
-    
-    --spacing-section: 64px; /* Reduced from 80px for tighter feel */
-    --width-content: 1080px;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hohta – Aurinkovoima Bränditeoksi</title>
 
-  html {
-    scroll-behavior: smooth;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    background-image: 
-      linear-gradient(
-        to bottom,
-        rgba(15, 23, 42, 0.65) 0%,
-        rgba(15, 23, 42, 0.45) 50%,
-        rgba(15, 23, 42, 0.55) 100%
-      ),
-      url('hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* Typography */
-  h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    color: var(--text-primary);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-
-  h1 {
-    font-size: 3.5rem;
-    letter-spacing: -0.03em;
-    font-weight: 700;
-  }
-
-  h2 {
-    font-size: 2.25rem;
-    letter-spacing: -0.02em;
-    margin-top: 0;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    font-family: 'Inter', sans-serif; /* Switch to Sans for H3 for cleaner look */
-    font-weight: 400;
-    color: var(--text-secondary);
-  }
-
-  p {
-    color: var(--text-secondary);
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-    max-width: none;
-  }
-
-  /* Layout */
-  section {
-    padding: var(--spacing-section) 20px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  /* Hero Section */
-  #above_fold {
-    min-height: 100vh; /* Full viewport height */
-    width: 100%;
-    max-width: none; /* Override generic section limit */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center content horizontally */
-    padding-top: 0; 
-    padding-bottom: 120px; 
-    
-    /* Background handled by body for persistent parallax */
-    color: #ffffff;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-container {
-    max-width: var(--width-content);
-    width: 100%;
-    padding: 0 20px;
-  }
-
-  #above_fold h1, 
-  #above_fold h2, 
-  #above_fold h3, 
-  #above_fold h4,
-  #above_fold .availability-tag {
-    color: #ffffff;
-  }
-
-  #above_fold .availability-tag {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  #above_fold button.secondary {
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-
-  #above_fold button.secondary:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.8);
-  }
-
-  #above_fold h1 {
-    text-shadow: 0 2px 20px rgba(0,0,0,0.2);
-  }
-
-  /* The "Paper" Container */
-  .content-paper {
-    position: relative;
-    z-index: 10;
-    background-color: var(--bg-main);
-    margin: -100px auto 0; /* Remove bottom margin - footer handles it */
-    max-width: var(--width-content); /* Match content width */
-    border-radius: 32px 32px 0 0; /* Round top corners only */
-    box-shadow: 
-      0 0 0 1px rgba(0, 0, 0, 0.03),
-      0 2px 4px rgba(0, 0, 0, 0.02),
-      0 12px 24px rgba(0, 0, 0, 0.06),
-      0 32px 64px rgba(0, 0, 0, 0.04);
-    padding-top: 60px;
-    overflow: hidden; /* Ensure rounded corners clip content */
-  }
-
-  /* Sections */
-  #section_1 {
-    /* Reset previous full-width hack */
-    width: auto;
-    position: static;
-    margin: 0 auto;
-    padding-top: 0; /* Padding handled by container */
-    background-color: transparent;
-  }
-
-  /* Tighter paragraph spacing in long-form sections */
-  #section_1 p {
-    margin-bottom: 1rem;
-  }
-
-  /* Alternating section backgrounds */
-  #section_2,
-  #section_4 {
-    background-color: var(--bg-secondary);
-    margin-left: -40px;
-    margin-right: -40px;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  .feature-grid {
-    margin-bottom: 0;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-
-  .availability-tag {
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 18px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 9999px; /* Match button pill style */
-  }
-
-  .availability-tag::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: #22c55e;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-  }
-
-  /* Buttons - Premium Pill Style */
-  button {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 14px 28px;
-    border-radius: 9999px; /* Pill shape */
-    cursor: pointer;
-    transition: all 0.2s ease;
-    letter-spacing: 0.01em;
-  }
-
-  button.primary {
-    background-color: var(--accent-dark);
-    color: white;
-    border: none;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.1);
-  }
-
-  button.primary:hover {
-    background-color: #1e293b;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
-    transform: translateY(-1px);
-  }
-
-  button.secondary {
-    background-color: transparent;
-    color: var(--text-primary);
-    border: 1.5px solid var(--accent-light);
-  }
-
-  button.secondary:hover {
-    border-color: var(--text-primary);
-    background-color: rgba(0, 0, 0, 0.02);
-  }
-
-  /* Sections */
-  /* #section_1 styles moved to reset block above */
-
-
-  .feature-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin-top: 60px;
-  }
-
-  @media (min-width: 768px) {
-    .feature-grid {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-
-  .feature-item {
-    padding: 24px;
-    border-radius: 16px;
-    transition: all 0.2s ease;
-    background: transparent;
-  }
-
-  .feature-item:hover {
-    background: rgba(255, 255, 255, 0.7);
-    transform: translateY(-2px);
-  }
-
-  .feature-item h4 {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .feature-icon {
-    width: 44px;
-    height: 44px;
-    background: var(--bg-main);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-  }
-
-  .feature-icon svg {
-    width: 22px;
-    height: 22px;
-    stroke: var(--accent-dark);
-    stroke-width: 1.5;
-    fill: none;
-  }
-
-  .feature-item p {
-    font-size: 1rem;
-    margin-bottom: 0;
-  }
-
-  /* Utility */
-  .text-highlight {
-    color: var(--text-primary);
-    font-weight: 500;
-  }
-
-  /* Footer */
-  .site-footer {
-    background-color: var(--accent-dark);
-    color: white;
-    padding: 48px 20px;
-    text-align: center;
-    max-width: var(--width-content);
-    margin: 0 auto;
-  }
-
-  .site-footer p {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.875rem;
-    margin: 0;
-  }
-
-  .site-footer a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .site-footer a:hover {
-    color: white;
-  }
-
-</style>
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 
 <body>
 
-<section id="above_fold">
+<header class="site-header">
+  <span class="logo">HOHTA</span>
+</header>
+
+<section class="hero">
   <div class="hero-container">
-  <div class="hero-content">
-    <h1>Investointisi tuottaa.<br>Hiljaa. Katolla. Piilossa.</h1>
-    <h3>Muuta aurinkopaneelisi bränditeoksi. Vaivattomasti.</h3>
-  </div>
-  
-  <div class="hero-actions">
-    <button class="primary">Ota yhteyttä</button>
-    <button class="secondary">Näe demo</button>
-  </div>
-  
-  <div class="availability-tag">
-    Otamme rajatun määrän asiakkaita Q1/2026
-  </div>
+    <h1>Aurinkoenergia? Katolla, <u>piilossa</u>.</h1>
+    <h2 class="hero-subtitle">Muunna aurinkovoima bränditeoksi. Vaivattomasti.</h2>
+    <h3>Hohta on aulaasi tuleva dashboard, joka visualisoi energiatuotannon asiakkaillesi.</h3>
   </div>
 </section>
 
 <main class="content-paper">
 
-<section id="section_1">
-  <h2>Perinteinen tapa: palapeli ilman kuvaa.</h2>
-  <p>Halusit aurinkovoimalan näkyviin. Mitä sait?</p>
-  <p>Ensin tarvitset dataloggerin. Sitten lisenssit. Sitten näytön. Sitten näyttöohjelmistojen kytkemisen dataloggeriin. Sitten IT-osastolta palomuuriavauksen, koska laite pitää kytkeä sisäverkkoon.</p>
-  <p>Perinteisessä ratkaisussa saat ensin kasata tuotteiden ja lisenssien palapelin. Sitten tapella IT-osaston kanssa hyväksyntää uusien laitteiden verkkoon tuomisesta.</p>
-  <p>Kvartaali myöhemmin istut sähköpostiketjussa tukipalvelun kanssa jossain päin Eurooppaa ja mietit, miksi näyttö näyttää edelleen virhekoodia.</p>
-  <p>Investointi on tehty. Miksi näyttökokemuksen pitäisi olla tällainen?</p>
-</section>
+  <section id="section_1" class="fade-in">
+    <h2>Nykyiset ratkaisut tuottavat päänsärkyä:</h2>
+    <ul class="pain-points">
+      <li><strong>Ei 4G yhteyttä:</strong> Pitkä hyväksymisprosessi yhtiön verkkoon. Odotusta. Selvittelyjä. Viivästyksiä.</li>
+      <li><strong>Palapeli:</strong> Liimaat itse eri yritysten ratkaisuja yhteen ja toivot että toimii.</li>
+      <li><strong>Tuen puute:</strong> Kuka tulee korjaamaan, kun jotain menee rikki?</li>
+    </ul>
+  </section>
 
-<section id="section_2">
-  <h2>Yksi soitto. Me hoidamme loput.</h2>
-  <p>Hohta toimii täysin erillään sisäverkostasi.</p>
-  
-  <div class="feature-grid">
-    <div class="feature-item">
-      <h4>
-        <span class="feature-icon">
+  <section id="section_2" class="fade-in">
+    <h2>Yksi soitto. Me hoidamme loput.</h2>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 20h.01M7 20v-4M12 20v-8M17 20V8M22 4v16"/>
           </svg>
-        </span>
-        Oma yhteys
-      </h4>
-      <p>Laitteemme käyttää mobiiliverkkoa. Ei reitittimiä, ei palomuurisääntöjä, ei IT-politiikkaa.</p>
-    </div>
-    <div class="feature-item">
-      <h4>
-        <span class="feature-icon">
+        </div>
+        <h4>Oma yhteys</h4>
+        <p>Laitteemme käyttää mobiiliverkkoa. Ei reitittimiä, ei palomuurisääntöjä, ei IT-politiikkaa.</p>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
           </svg>
-        </span>
-        Avaimet käteen
-      </h4>
-      <p>Emme lähetä pakettia ja toivota onnea. Tulemme paikan päälle, testaamme yhteydet, asennamme laitteiston.</p>
-    </div>
-    <div class="feature-item">
-      <h4>
-        <span class="feature-icon">
+        </div>
+        <h4>Avaimet käteen</h4>
+        <p>Emme lähetä pakettia ja toivota onnea. Tulemme paikan päälle, testaamme yhteydet, asennamme laitteiston.</p>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10"/>
             <line x1="2" y1="12" x2="22" y2="12"/>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
           </svg>
-        </span>
-        Yksi URL
-      </h4>
-      <p>Saat verkko-osoitteen. Avaa se aula-tv:n selaimessa. Homma hoidettu.</p>
+        </div>
+        <h4>Yksi URL</h4>
+        <p>Saat verkko-osoitteen. Avaa se aula-tv:n selaimessa. Homma hoidettu.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="section_3">
-  <h2>Toimii useimpien invertterien kanssa.</h2>
-  <p>Tuemme sunspec-protokollaa. Tätä yleistä protokollaa tukevia inverttereitä löytyy mm. valmistajilta <span class="text-highlight">SMA, Fronius, SolarEdge, ABB</span>.</p>
-  <p>Ota meihin yhteyttä, niin tarkistamme tukeeko invertterisi jo sunspec-protokollaa.</p>
-</section>
+  <section id="section_3" class="fade-in">
+    <h2>100 % suomalainen. Ei kiertoteitä.</h2>
+    <p>Ei reititystä ulkomaisiin pilvipalveluihin. Ei harmaa-alueita tietoturvassa. Ei tukipyyntöjä aikavyöhykkeiden yli.</p>
+    <p>Kun jokin menee pieleen, soitat suomalaiseen numeroon ja puhut suomea.</p>
+  </section>
 
-<section id="section_4">
-  <h2>100 % suomalainen. Ei kiertoteitä.</h2>
-  <p>Kaikki infrastruktuurimme sijaitsee Suomessa. Palvelimet, data, tuki – kaikki.</p>
-  <p>Ei reititystä ulkomaisiin pilvipalveluihin. Ei harmaa-alueita tietoturvassa. Ei tukipyyntöjä aikavyöhykkeiden yli.</p>
-  <p>Kun jokin menee pieleen, soitat suomalaiseen numeroon ja puhut suomea.</p>
-</section>
+  <section id="section_4" class="fade-in">
+    <h2>Toimii useimpien invertterien kanssa.</h2>
+    <p>Tuemme laajasti yleisimpiä invertterivalmistajia, kuten <span class="text-highlight">SMA, Fronius, SolarEdge, ABB</span> ja monia muita.</p>
+    <p>Tarkistamme asennuksen yhteydessä, että invertterisi on yhteensopiva järjestelmämme kanssa.</p>
+    <p>Etkö ole varma? <a href="#section_5" class="text-link">Kysy meiltä →</a></p>
+  </section>
 
-<section id="section_5">
-  <h2>Haemme pilottikumppaneita Q1/2026.</h2>
-  <p>Etsimme yrityksiä, joilla on aurinkovoimala ja halu tehdä siitä näkyvä osa brändiään.</p>
-  <p>Pilotissa ei vain asenneta laitetta – selvitetään yhdessä, miten data palvelee teidän tarinaanne parhaiten.</p>
-  <div style="margin-top: 40px;">
-    <button class="primary">Varaa 15 min puhelu →</button>
-  </div>
-  <p style="font-size: 0.875rem; margin-top: 1rem;">Vastaamme yleensä saman päivän aikana.</p>
-</section>
+  <section id="section_5" class="fade-in">
+    <h2>Haemme pilottikumppaneita Q1/2026.</h2>
+    <p>Etsimme yrityksiä, joilla on aurinkovoimala ja halu tehdä siitä näkyvä osa brändiään.</p>
+    <p>Pilotissa ei vain asenneta laitetta – selvitetään yhdessä, miten data palvelee teidän tarinaanne parhaiten.</p>
+    <div class="cta-actions">
+      <button class="primary">Varaa 15 min puhelu →</button>
+    </div>
+    <p class="cta-note">Vastaamme yleensä saman päivän aikana.</p>
+  </section>
 
 </main>
 
@@ -464,6 +100,6 @@
   <p>© 2026 Hohta. Kaikki oikeudet pidätetään.</p>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>
-
