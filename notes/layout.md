@@ -2,7 +2,7 @@
 <above_fold>
 
 # Investointisi tuottaa.
-# Hiljaa. Katolla. Piilossa.
+# Hiljaa. Katolla. <u>Piilossa</u>.
 
 
 ### Muuta aurinkopaneelisi bränditeoksi.
