@@ -122,14 +122,15 @@ section {
    ---------------------------------------- */
 
 .site-header {
-  max-width: var(--width-content);
+	width: 100%;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 24px;
 }
 
 @media (min-width: 768px) {
   .site-header {
-    padding: 32px 40px;
+    padding: 32px 80px;
   }
 }
 
@@ -146,56 +147,51 @@ section {
 
 .hero {
   width: 100%;
-  max-width: var(--width-content);
+  max-width: 1920px;
   margin: 0 auto;
   padding: 0 24px 80px;
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding: 0 40px 120px;
+    padding: 0 80px 80px;
   }
 }
 
 .hero-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 80px;
   align-items: center;
   width: 100%;
 }
 
 @media (min-width: 768px) {
   .hero-container {
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-center;
   }
 }
 
 .hero-text {
-  flex: 1;
   text-align: center;
 }
 
 @media (min-width: 768px) {
   .hero-text {
     text-align: left;
-    max-width: 45%;
   }
 }
 
 .hero-image-wrapper {
-  flex: 1;
   display: flex;
   justify-content: center;
 }
 
 @media (min-width: 768px) {
   .hero-image-wrapper {
-    justify-content: flex-end;
-    max-width: 50%;
-    margin-top: -120px;
+    margin-top: 0px;
   }
 }
 
@@ -408,10 +404,84 @@ button.secondary:focus-visible {
   border-top: 1px solid var(--border-light);
 }
 
-.site-footer p {
+.footer-info {
+  margin-bottom: 24px;
+}
+
+.footer-info p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.footer-info strong {
+  color: var(--text-primary);
+}
+
+.footer-copyright {
   color: var(--text-muted);
   font-size: 0.8125rem;
   margin: 0;
+}
+
+/* ----------------------------------------
+   Contact Form
+   ---------------------------------------- */
+
+.contact-section {
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
+}
+
+.contact-form {
+  margin-top: 40px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  transition: border-color 0.15s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--text-secondary);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.logo-link {
+  text-decoration: none;
 }
 
 /* ----------------------------------------
