@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hohta – Aurinkovoima Bränditeoksi</title>
 
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 
 <body>
@@ -16,21 +19,27 @@
 
 <section class="hero">
   <div class="hero-container">
-    <h1>Aurinkoenergia? Katolla, <u>piilossa</u>.</h1>
-    <h2 class="hero-subtitle">Muunna aurinkovoima bränditeoksi. Vaivattomasti.</h2>
-    <h3>Hohta on aulaasi tuleva dashboard, joka visualisoi energiatuotannon asiakkaillesi.</h3>
+    <div class="hero-text">
+      <h1>Aurinko dashboard aulaasi</h1>
+      <h3>Näytä arvosi asiakkaillesi. Vahvista brändiäsi.</h3>
+    </div>
+    <div class="hero-image-wrapper">
+      <img src="dashboard-preview.png" alt="Hohta dashboard - kuukauden energiantuotto" class="hero-image">
+    </div>
   </div>
 </section>
 
 <main class="content-paper">
 
   <section id="section_1" class="fade-in">
-    <h2>Nykyiset ratkaisut tuottavat päänsärkyä:</h2>
-    <ul class="pain-points">
-      <li><strong>Ei 4G yhteyttä:</strong> Pitkä hyväksymisprosessi yhtiön verkkoon. Odotusta. Selvittelyjä. Viivästyksiä.</li>
-      <li><strong>Palapeli:</strong> Liimaat itse eri yritysten ratkaisuja yhteen ja toivot että toimii.</li>
-      <li><strong>Tuen puute:</strong> Kuka tulee korjaamaan, kun jotain menee rikki?</li>
-    </ul>
+    <div class="section-content">
+      <h2>Nykyiset ratkaisut tuottavat päänsärkyä:</h2>
+      <ul class="pain-points">
+        <li><strong>Ei 4G yhteyttä:</strong> Pitkä hyväksymisprosessi yhtiön verkkoon. Odotusta. Selvittelyjä. Viivästyksiä.</li>
+        <li><strong>Palapeli:</strong> Liimaat itse eri yritysten ratkaisuja yhteen ja toivot että toimii.</li>
+        <li><strong>Tuen puute:</strong> Kuka tulee korjaamaan, kun jotain menee rikki?</li>
+      </ul>
+    </div>
   </section>
 
   <section id="section_2" class="fade-in">
@@ -72,26 +81,32 @@
   </section>
 
   <section id="section_3" class="fade-in">
-    <h2>100 % suomalainen. Ei kiertoteitä.</h2>
-    <p>Ei reititystä ulkomaisiin pilvipalveluihin. Ei harmaa-alueita tietoturvassa. Ei tukipyyntöjä aikavyöhykkeiden yli.</p>
-    <p>Kun jokin menee pieleen, soitat suomalaiseen numeroon ja puhut suomea.</p>
+    <div class="section-content">
+      <h2>100 % suomalainen. Ei kiertoteitä.</h2>
+      <p>Ei reititystä ulkomaisiin pilvipalveluihin. Ei harmaa-alueita tietoturvassa. Ei tukipyyntöjä aikavyöhykkeiden yli.</p>
+      <p>Kun jokin menee pieleen, soitat suomalaiseen numeroon ja puhut suomea.</p>
+    </div>
   </section>
 
   <section id="section_4" class="fade-in">
-    <h2>Toimii useimpien invertterien kanssa.</h2>
-    <p>Tuemme laajasti yleisimpiä invertterivalmistajia, kuten <span class="text-highlight">SMA, Fronius, SolarEdge, ABB</span> ja monia muita.</p>
-    <p>Tarkistamme asennuksen yhteydessä, että invertterisi on yhteensopiva järjestelmämme kanssa.</p>
-    <p>Etkö ole varma? <a href="#section_5" class="text-link">Kysy meiltä →</a></p>
+    <div class="section-content">
+      <h2>Toimii useimpien invertterien kanssa.</h2>
+      <p>Tuemme laajasti yleisimpiä invertterivalmistajia, kuten <span class="text-highlight">SMA, Fronius, SolarEdge, ABB</span> ja monia muita.</p>
+      <p>Tarkistamme asennuksen yhteydessä, että invertterisi on yhteensopiva järjestelmämme kanssa.</p>
+      <p>Etkö ole varma? <a href="#section_5" class="text-link">Kysy meiltä →</a></p>
+    </div>
   </section>
 
   <section id="section_5" class="fade-in">
-    <h2>Haemme pilottikumppaneita Q1/2026.</h2>
-    <p>Etsimme yrityksiä, joilla on aurinkovoimala ja halu tehdä siitä näkyvä osa brändiään.</p>
-    <p>Pilotissa ei vain asenneta laitetta – selvitetään yhdessä, miten data palvelee teidän tarinaanne parhaiten.</p>
-    <div class="cta-actions">
-      <button class="primary">Varaa 15 min puhelu →</button>
+    <div class="section-content">
+      <h2>Haemme pilottikumppaneita Q1/2026.</h2>
+      <p>Etsimme yrityksiä, joilla on aurinkovoimala ja halu tehdä siitä näkyvä osa brändiään.</p>
+      <p>Pilotissa ei vain asenneta laitetta – selvitetään yhdessä, miten data palvelee teidän tarinaanne parhaiten.</p>
+      <div class="cta-actions">
+        <button class="primary">Varaa 15 min puhelu →</button>
+      </div>
+      <p class="cta-note">Vastaamme yleensä saman päivän aikana.</p>
     </div>
-    <p class="cta-note">Vastaamme yleensä saman päivän aikana.</p>
   </section>
 
 </main>
