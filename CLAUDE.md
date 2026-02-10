@@ -9,8 +9,8 @@ Hohta is a Finnish marketing website for a B2B service that turns corporate sola
 
 ## Architecture
 
-- `index.html` — Main landing page
-- `contact.html` — Contact form page
+- `index.html` — Main landing page (hero + 5 content sections)
+- `contact.html` — Contact form (submits to submit-form.com, redirects to kiitos.html)
 - `kiitos.html` — Thank you page (post-form submission)
 - `styles.css` — All styling (premium minimal aesthetic)
 - `main.js` — Scroll animations (IntersectionObserver) and smooth scrolling
@@ -31,7 +31,7 @@ Hohta is a Finnish marketing website for a B2B service that turns corporate sola
 - `--width-content: 1000px` / `--width-text: 640px` — layout constraints
 
 **Typography:**
-- Inter (sans-serif) via Google Fonts
+- Inter (sans-serif) via Google Fonts, system fallbacks
 - Font weights: 400, 500, 600, 700
 - Fluid font sizing with `clamp()`
 
