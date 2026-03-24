@@ -262,6 +262,33 @@ button.primary:focus-visible {
   outline-offset: 2px;
 }
 
+.button-link {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.button-link-primary {
+  background-color: var(--text-primary);
+  color: var(--bg-main);
+  border: none;
+}
+
+.button-link-primary:hover {
+  opacity: 0.85;
+}
+
+.button-link-primary:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
 button.secondary {
   background-color: transparent;
   color: var(--text-primary);
@@ -445,6 +472,16 @@ button.secondary:focus-visible {
 
 .contact-form {
   margin-top: 40px;
+}
+
+.contact-direct {
+  margin: 32px 0;
+}
+
+.contact-direct p {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
 }
 
 .form-group {
