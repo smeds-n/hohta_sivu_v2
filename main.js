@@ -85,10 +85,29 @@
   }
 
   /**
+   * FAQ accordion
+   */
+  function initFaqAccordion() {
+    document.querySelectorAll('.faq-question').forEach(question => {
+      const answer = document.getElementById(question.getAttribute('aria-controls'));
+
+      if (!answer) return;
+
+      question.addEventListener('click', () => {
+        const isOpen = question.getAttribute('aria-expanded') === 'true';
+
+        question.setAttribute('aria-expanded', String(!isOpen));
+        answer.hidden = isOpen;
+      });
+    });
+  }
+
+  /**
    * Initialize on DOM ready
    */
   function init() {
     initStickyNav();
+    initFaqAccordion();
     initScrollAnimations();
     initSmoothScroll();
   }
