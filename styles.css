@@ -535,42 +535,6 @@ button.secondary:focus-visible {
   }
 }
 
-#section_1 {
-  padding-top: var(--spacing-section-mobile);
-  border-top: 1px solid var(--border-light);
-}
-
-@media (min-width: 768px) {
-  #section_1 {
-    padding-top: var(--spacing-section);
-  }
-}
-
-/* Pain points list */
-.pain-points {
-  list-style: none;
-  padding: 0;
-}
-
-.pain-points li {
-  color: var(--text-secondary);
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  padding-left: 0;
-}
-
-.pain-points li strong {
-  color: var(--text-primary);
-}
-
-/* Section 2 - heading constrained and centered */
-#section_2 h2 {
-  max-width: var(--width-text);
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* ----------------------------------------
    Feature Grid
    ---------------------------------------- */
@@ -662,6 +626,12 @@ button.secondary:focus-visible {
   margin-bottom: 20px;
 }
 
+.pricing-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
 .pricing-card .pricing-features {
   list-style: none;
   margin: 0;
@@ -737,22 +707,31 @@ button.secondary:focus-visible {
 }
 
 /* ----------------------------------------
-   CTA Section
+   Image Showcase
    ---------------------------------------- */
 
-#section_6 {
-  text-align: center;
+.image-showcase {
+  padding-top: 0;
 }
 
-#section_6 .cta-actions {
-  margin-top: 40px;
+.image-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
-#section_6 .cta-note {
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-  margin-top: 16px;
-  margin-bottom: 0;
+.showcase-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .image-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
 }
 
 /* ----------------------------------------
