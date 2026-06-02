@@ -12,6 +12,10 @@
     const elements = document.querySelectorAll('.fade-in');
 
     if (!elements.length) return;
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach(el => el.classList.add('visible'));
+      return;
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -62,18 +66,20 @@
       toggle.setAttribute('aria-expanded', String(isOpen));
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      const isStuck = !entries[0].isIntersecting;
-      nav.classList.toggle('is-stuck', isStuck);
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        const isStuck = !entries[0].isIntersecting;
+        nav.classList.toggle('is-stuck', isStuck);
 
-      if (!isStuck) {
-        setOpen(false);
-      }
-    }, {
-      threshold: 0
-    });
+        if (!isStuck) {
+          setOpen(false);
+        }
+      }, {
+        threshold: 0
+      });
 
-    observer.observe(sentinel);
+      observer.observe(sentinel);
+    }
 
     toggle.addEventListener('click', () => {
       setOpen(!nav.classList.contains('is-open'));
@@ -88,17 +94,19 @@
    * FAQ accordion
    */
   function initFaqAccordion() {
-    document.querySelectorAll('.faq-question').forEach(question => {
+    document.addEventListener('click', event => {
+      const question = event.target.closest('.faq-question');
+
+      if (!question) return;
+
       const answer = document.getElementById(question.getAttribute('aria-controls'));
 
       if (!answer) return;
 
-      question.addEventListener('click', () => {
-        const isOpen = question.getAttribute('aria-expanded') === 'true';
+      const isOpen = question.getAttribute('aria-expanded') === 'true';
 
-        question.setAttribute('aria-expanded', String(!isOpen));
-        answer.hidden = isOpen;
-      });
+      question.setAttribute('aria-expanded', String(!isOpen));
+      answer.hidden = isOpen;
     });
   }
 
