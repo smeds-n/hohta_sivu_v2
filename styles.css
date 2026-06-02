@@ -876,6 +876,9 @@ button.secondary:focus-visible {
     color: var(--text-primary);
     font-weight: 700;
     max-width: 8.5rem;
+    align-self: stretch;
+    padding-right: 10px;
+    border-right: 1px solid var(--border-light);
   }
 }
 
