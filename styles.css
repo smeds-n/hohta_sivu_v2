@@ -126,6 +126,9 @@ section {
   max-width: 1920px;
   margin: 0 auto;
   padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (min-width: 768px) {
@@ -317,6 +320,24 @@ section {
   font-weight: 600;
 }
 
+.nav-links a.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid var(--text-primary);
+  border-radius: 6px;
+  background: var(--text-primary);
+  color: var(--bg-main);
+  text-decoration: none;
+}
+
+.nav-links a.nav-cta:hover {
+  opacity: 0.86;
+  text-decoration: none;
+}
+
 .nav-links a:hover {
   text-decoration: underline;
 }
@@ -415,6 +436,11 @@ section {
     padding: 12px 0;
   }
 
+  .site-nav.is-stuck.is-open .nav-links a.nav-cta {
+    margin: 6px 0;
+    padding: 0 16px;
+  }
+
   .simple-page .site-nav-inner {
     align-items: center;
     flex-direction: row;
@@ -445,6 +471,11 @@ section {
 
   .simple-page .site-nav.is-open .nav-links a {
     padding: 12px 0;
+  }
+
+  .simple-page .site-nav.is-open .nav-links a.nav-cta {
+    margin: 6px 0;
+    padding: 0 16px;
   }
 }
 
@@ -641,15 +672,51 @@ button.secondary:focus-visible {
   margin-bottom: 40px;
 }
 
+.pricing-note {
+  position: relative;
+  margin-top: 18px;
+  padding: 16px 18px 16px 26px;
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--text-primary);
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.pricing-note::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -9px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  border: 3px solid var(--bg-main);
+  transform: translateY(-50%);
+}
+
+.pricing-note p {
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 16px;
 }
 
 @media (min-width: 768px) {
   .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -657,7 +724,7 @@ button.secondary:focus-visible {
   display: block;
   border: 1px solid var(--border-light);
   border-radius: 10px;
-  padding: 24px;
+  padding: 20px;
   color: inherit;
   text-decoration: none;
   transition: border-color 160ms ease, transform 160ms ease;
@@ -675,9 +742,9 @@ button.secondary:focus-visible {
 
 .pricing-card .price {
   color: var(--text-primary);
-  font-size: 1.35rem;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .pricing-description {
@@ -972,7 +1039,7 @@ button.secondary:focus-visible {
 
 .feature-matrix {
   width: 100%;
-  min-width: 640px;
+  min-width: 760px;
   border-collapse: collapse;
 }
 
@@ -993,34 +1060,6 @@ button.secondary:focus-visible {
 .feature-matrix th:first-child,
 .feature-matrix td:first-child {
   min-width: 220px;
-}
-
-/* ----------------------------------------
-   Image Showcase
-   ---------------------------------------- */
-
-.image-showcase {
-  padding-top: 0;
-}
-
-.image-showcase-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
-.showcase-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-@media (min-width: 768px) {
-  .image-showcase-grid {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-  }
 }
 
 /* ----------------------------------------
@@ -1184,6 +1223,17 @@ button.secondary:focus-visible {
 
 .logo-link {
   text-decoration: none;
+}
+
+.language-link {
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.language-link:hover {
+  text-decoration: underline;
 }
 
 /* ----------------------------------------
