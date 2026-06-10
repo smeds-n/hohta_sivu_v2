@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=31">
+  <link rel="stylesheet" href="../styles.css?v=33">
 </head>
 
 <body class="simple-page">
@@ -56,7 +56,7 @@
     <div class="section-content service-content service-nav-links">
       <a href="#concept">Concept</a>
       <a href="#roles">Packages</a>
-      <a href="#standard-view">Standard view</a>
+      <a href="#views">Views</a>
       <a href="#package-details">Details</a>
       <a href="#summary">Summary</a>
       <a href="#terms">Terms</a>
@@ -111,10 +111,23 @@
     </div>
   </section>
 
-  <section id="standard-view" class="service-section">
+  <section id="views" class="service-section">
     <div class="section-content service-content">
-      <h2>3. Standard View</h2>
-      <p>The standard view is Hohta's standard public information-screen view for the Basic, Extended, and Custom packages. It is designed for a lobby, corridor, educational institution, or customer-space display where solar power system production should be presented clearly.</p>
+      <h2>3. Views</h2>
+      <p class="service-note">All information-screen views are produced for the customer as a web page. The customer can open the link we provide and view solar production on the information screen. For the view to work, the information screen must have an internet connection. The information screen does not need an internal-network connection to the solar inverters.</p>
+
+      <h3>Lightweight Information Screen</h3>
+      <p>The lightweight information screen is a simple public view included in the Small package for presenting solar power system production. It is suitable for small sites where the current production status should be displayed clearly without historical data or monitoring features.</p>
+      <p>The view includes:</p>
+      <ul>
+        <li>instantaneous production power</li>
+        <li>the system's total yield</li>
+        <li>Hohta's logo and theme</li>
+      </ul>
+      <p>The lightweight information screen does not include saved historical data, historical graphs, or a production chart for the last 30 days.</p>
+
+      <h3>Basic View</h3>
+      <p>The basic view is Hohta's standard public information-screen view for the Basic, Extended, and Custom packages. It is designed for a lobby, corridor, educational institution, or customer-space display where solar power system production should be presented clearly.</p>
       <p>The view includes:</p>
       <ul>
         <li>the system's total yield</li>
@@ -123,17 +136,15 @@
         <li>energy produced during the last 30 days as a bar chart</li>
         <li>Hohta's logo and theme</li>
       </ul>
-      <p>The Small package uses a lighter information-screen view that includes only instantaneous production power and total yield. The Small package does not save or display historical data.</p>
-      <p class="service-note">All information-screen views are produced for the customer as a web page. The customer can open the link we provide and view solar production on the information screen. For the view to work, the information screen must have an internet connection. The information screen does not need an internal-network connection to the solar inverters.</p>
       <figure class="service-figure">
-        <a class="service-image-link" href="../assets/service-standard.png" aria-label="Open standard dashboard example full size">
-          <img src="../assets/service-standard.png" alt="Hohta standard dashboard view example">
+        <a class="service-image-link" href="../assets/service-standard.png" aria-label="Open basic view example full size">
+          <img src="../assets/service-standard.png" alt="Hohta basic view example">
         </a>
-        <figcaption>Example of the standard view.</figcaption>
+        <figcaption>Example of the basic view.</figcaption>
       </figure>
 
       <h3>Elegant View</h3>
-      <p>The elegant view is a more visual information-screen view for sites where solar production should be presented in a more communication-focused way, such as in a lobby, customer space, or sustainability communication setting. It highlights the impact of solar production in a clear and calm format, and it can be selected in the Extended package instead of the standard view.</p>
+      <p>The elegant view is a more visual information-screen view for sites where solar production should be presented in a more communication-focused way, such as in a lobby, customer space, or sustainability communication setting. It highlights the impact of solar production in a clear and calm format, and it can be selected in the Extended package instead of the basic view.</p>
       <p>In the Custom package, the elegant view can be used as a starting point for modifications. These can include the logo, color theme, background image, fonts, and the information shown on the display.</p>
       <figure class="service-figure">
         <a class="service-image-link" href="../assets/service-elegant.png" aria-label="Open elegant dashboard example full size">
@@ -178,7 +189,7 @@
       <p><strong>Key contents:</strong></p>
       <ul>
         <li>up to 150 kWp, up to 2 inverters, 1 data collection device, and 1 user</li>
-        <li>public standard display for presenting production</li>
+        <li>public basic view for presenting production</li>
         <li>Hohta logo and theme</li>
         <li>12 months of historical data in the login portal</li>
         <li>light support provided on a best-effort basis</li>
@@ -203,7 +214,7 @@
         <li>24 months of historical data</li>
         <li>email alerts for inverter fault conditions or error codes detected by the service</li>
         <li>email alerts for data collection interruptions detected by the service</li>
-        <li>option for an elegant or standard information-screen view</li>
+        <li>option for an elegant or basic information-screen view</li>
         <li>reasonable remote support during Hohta's normal working hours, insofar as the matter concerns the service for which Hohta is responsible</li>
       </ul>
       <p><strong>Limitations:</strong></p>
@@ -219,7 +230,7 @@
       <p><strong>Key contents:</strong></p>
       <ul>
         <li>No size limits.</li>
-        <li>You may modify the standard or elegant view according to your needs. This includes the logo, color theme, background image, information to be displayed, or a view built completely from scratch for your needs.</li>
+        <li>You may modify the basic or elegant view according to your needs. This includes the logo, color theme, background image, information to be displayed, or a view built completely from scratch for your needs.</li>
         <li>Feature scope according to the customer's needs.</li>
         <li>Selectable number of users.</li>
         <li>Customer-specific reports, data extracts, or additional services.</li>
