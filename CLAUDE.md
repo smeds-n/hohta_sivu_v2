@@ -10,8 +10,8 @@ Hohta is a Finnish marketing website for a B2B service that turns corporate sola
 ## Architecture
 
 - `index.html` — Main landing page (hero + 5 content sections)
-- `contact.html` — Contact form (submits to submit-form.com, redirects to kiitos.html)
-- `kiitos.html` — Thank you page (post-form submission)
+- `contact.html` — Contact page with a tap-to-call phone number
+- `kiitos.html` — Legacy thank-you page
 - `styles.css` — All styling (premium minimal aesthetic)
 - `main.js` — Scroll animations (IntersectionObserver) and smooth scrolling
 - `notes/` — Design documentation (color palette, layout specs)
