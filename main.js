@@ -111,6 +111,39 @@
   }
 
   /**
+   * Enquiry form handoff and confirmation state
+   */
+  function initEnquiryForm() {
+    const form = document.getElementById('enquiry-form');
+    if (!form) return;
+
+    const redirect = form.querySelector('input[name="_redirect"]');
+    const intro = document.getElementById('enquiry-intro');
+    const note = document.querySelector('.form-note');
+    const success = document.getElementById('kiitos');
+    const params = new URLSearchParams(window.location.search);
+
+    if (redirect) {
+      const returnUrl = new URL(window.location.href);
+      returnUrl.search = '';
+      returnUrl.hash = 'kiitos';
+      returnUrl.searchParams.set('submitted', '1');
+      redirect.value = returnUrl.toString();
+    }
+
+    if (params.get('submitted') !== '1' || !success) return;
+
+    form.hidden = true;
+    if (intro) intro.hidden = true;
+    if (note) note.hidden = true;
+    success.hidden = false;
+    window.requestAnimationFrame(() => {
+      success.focus({ preventScroll: true });
+      success.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  /**
    * Initialize on DOM ready
    */
   function init() {
@@ -118,6 +151,7 @@
     initFaqAccordion();
     initScrollAnimations();
     initSmoothScroll();
+    initEnquiryForm();
   }
 
   if (document.readyState === 'loading') {
