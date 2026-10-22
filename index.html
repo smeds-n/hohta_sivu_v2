@@ -116,11 +116,13 @@
 
   <section class="dashboard-preview-section fade-in">
     <div class="section-content dashboard-preview-content">
-      <div class="dashboard-preview-heading">
-        <h2>Esimerkki aurinkotuotannon näkymästä</h2>
-        <p>Esimerkkidashboard käyttää viiden simuloidun invertterin dataa.</p>
+      <div class="dashboard-frame">
+        <div class="dashboard-frame-bar">
+          <span class="dashboard-frame-title">Esimerkkidemo</span>
+          <span class="dashboard-live"><span class="dashboard-live-dot" aria-hidden="true"></span> LIVE</span>
+        </div>
+        <iframe class="dashboard-embed" src="https://graphs.hohta.fi/?display=inverter-demo" title="Esimerkkidemo: aurinkotuotannon live-näkymä" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
-      <iframe class="dashboard-embed" src="https://graphs.hohta.fi/?display=inverter-demo" title="Live inverter graphs" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </section>
 
