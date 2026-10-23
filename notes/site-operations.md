@@ -76,9 +76,11 @@ state was visible and the error state was hidden. Niklas confirmed receipt at
   self-hosted font, dashboard iframe, and no horizontal overflow at desktop
   width. The graph server returns HTTP 200 with production and preview origins
   allowed by its framing policy. No additional enquiry was submitted.
-- Follow-up: `www.hohta.fi` currently serves HTTP 200. Configure a permanent
-  redirect to `https://hohta.fi`, preserving paths and query strings, then
-  verify it. This restores the former site's www-to-apex behavior.
+- Niklas configured the www-to-apex redirect. Verified HTTP 301 from
+  `https://www.hohta.fi/` to `https://hohta.fi/`, including `/en/` and a package
+  URL with multiple query parameters; paths and query strings are preserved.
+  HTTP on www first redirects to HTTPS on www, then to the HTTPS apex. The
+  apex remains HTTP 200.
 - Rollback tag `pre-pages-cutover-2026-10-23` preserves the former `origin/main`.
   Local release/API snapshots are under `.git/deployment-backups/2026-10-23/`.
   DNS was changed manually by Niklas; the CLI did not have DNS read access.
