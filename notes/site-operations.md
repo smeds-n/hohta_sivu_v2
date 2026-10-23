@@ -54,3 +54,31 @@ with marker `HOHTA-DELIVERY-20261023-01`. Formspark accepted it and returned HTT
 302 to `/en/?submitted=1#kiitos`, with no personal fields in the URL. The success
 state was visible and the error state was hidden. Niklas confirmed receipt at
 `niklas@hohta.fi`. No repeat submission was made.
+
+## Production deployment — 2026-10-23
+
+- Pages project `hohta-fi` now builds `main` automatically with
+  `sh scripts/build-site.sh`, publishing `dist/`. The first successful main
+  deployment was `b510c14a-3979-4802-b8a1-467416772e73`, commit `113a2ed`.
+- Niklas attached `hohta.fi` and `www.hohta.fi` through the Cloudflare dashboard.
+  The Pages API reports both domains, validation, and verification as active.
+  Both serve the updated website over HTTPS.
+- Niklas confirmed disconnecting the redundant `hohta-sivu-v2` Workers Builds
+  integration. Wrangler OAuth cannot independently inspect its build triggers.
+- Verified the Finnish and English landing, package, contact, and privacy
+  routes, HTTP-to-HTTPS redirect on the apex, legacy contact/confirmation
+  redirects, unknown-route HTTP 404, robots.txt, sitemap.xml, and social image.
+  The actual versioned stylesheet (`?v=36`) and script (`?v=4`) match the source.
+  Bare asset URLs can still return the former origin's cached files; the site
+  uses the verified versioned URLs. Cloudflare email obfuscation transforms
+  HTML in transit, so HTML byte equality is not a release check.
+- Browser inspection confirms the apex canonical, Formspark form action,
+  self-hosted font, dashboard iframe, and no horizontal overflow at desktop
+  width. The graph server returns HTTP 200 with production and preview origins
+  allowed by its framing policy. No additional enquiry was submitted.
+- Follow-up: `www.hohta.fi` currently serves HTTP 200. Configure a permanent
+  redirect to `https://hohta.fi`, preserving paths and query strings, then
+  verify it. This restores the former site's www-to-apex behavior.
+- Rollback tag `pre-pages-cutover-2026-10-23` preserves the former `origin/main`.
+  Local release/API snapshots are under `.git/deployment-backups/2026-10-23/`.
+  DNS was changed manually by Niklas; the CLI did not have DNS read access.

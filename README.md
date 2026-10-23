@@ -25,13 +25,14 @@ Cloudflare Pages settings:
 
 - Build command: `sh scripts/build-site.sh`
 - Output directory: `dist`
-- Intended production domains: `hohta.fi` and `www.hohta.fi`
+- Production branch: `main` (automatic production deployments enabled)
+- Active production domains: `hohta.fi` and `www.hohta.fi`
 - Pages project: `hohta-fi`
 
-Verify the production branch, domain associations and automatic deployment
-settings in Cloudflare before the production cutover. A separate Workers Builds
-integration also runs on this repository; its configuration is managed in
-Cloudflare rather than in this source tree.
+The production cutover was completed on 2026-10-23. Pushes to `main` publish to
+the production domains. Niklas disconnected the separate `hohta-sivu-v2` Workers
+Builds repository integration in Cloudflare; the Worker itself is retained.
+See `notes/site-operations.md` for verification evidence and redirect follow-up.
 
 ## Main files
 
