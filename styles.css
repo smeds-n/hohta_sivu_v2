@@ -2,6 +2,14 @@
    Hohta - Premium Minimal Stylesheet
    ======================================== */
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('assets/inter-variable.woff2') format('woff2');
+}
+
 :root {
   /* Color Palette */
   --bg-main: #ffffff;
@@ -707,6 +715,7 @@ button.secondary:focus-visible {
 }
 
 .dashboard-frame {
+  container-type: inline-size;
   overflow: hidden;
   border: 1px solid var(--border-light);
   border-radius: 12px;
@@ -770,6 +779,26 @@ button.secondary:focus-visible {
   height: 720px;
   border: 0;
   background: #fff;
+}
+
+/* The embedded app stacks its cards below a 701px iframe width. */
+@container (max-width: 700px) {
+  .dashboard-embed {
+    height: 980px;
+  }
+}
+
+@container (max-width: 300px) {
+  .dashboard-embed {
+    height: 1040px;
+  }
+}
+
+.dashboard-caption {
+  margin: 14px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 .package-link {
@@ -856,9 +885,6 @@ button.secondary:focus-visible {
     padding: 0 14px;
   }
 
-  .dashboard-embed {
-    height: 640px;
-  }
 }
 
 /* ----------------------------------------
@@ -1432,6 +1458,14 @@ button.secondary:focus-visible {
   margin: 0;
 }
 
+.form-error {
+  padding: 16px;
+  border: 1px solid #e5b8b4;
+  border-radius: 8px;
+  background: #fff5f4;
+  color: #8a1c13;
+}
+
 .footer-links {
   margin-top: 12px !important;
 }
@@ -1459,7 +1493,7 @@ button.secondary:focus-visible {
   letter-spacing: 0;
 }
 
-.booking-button {
+.action-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1473,7 +1507,7 @@ button.secondary:focus-visible {
   text-decoration: none;
 }
 
-.booking-button:hover {
+.action-button:hover {
   opacity: 0.85;
 }
 
@@ -1537,6 +1571,31 @@ button.secondary:focus-visible {
 
 .package-section .dashboard-frame {
   margin: 0 0 20px;
+}
+
+.privacy-content {
+  padding: 32px 24px;
+}
+
+@media (min-width: 768px) {
+  .privacy-content {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.privacy-content h1 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  overflow-wrap: anywhere;
+}
+
+.privacy-content h2 {
+  margin-top: 36px;
+  font-size: 1.4rem;
+}
+
+.privacy-content a {
+  overflow-wrap: anywhere;
 }
 
 .package-section h2 {

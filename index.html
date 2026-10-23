@@ -14,6 +14,9 @@
   <meta property="og:title" content="Hohta – Aurinkotuotanto näkyville">
   <meta property="og:description" content="Näytä aurinkovoimalasi tuotanto nykyisillä infonäytöilläsi. Perusnäkymä ilman kuukausimaksua.">
   <meta property="og:image" content="https://hohta.fi/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HOHTA — Aurinkotuotanto näkyville / Make solar production visible">
   <meta property="og:url" content="https://hohta.fi/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fi_FI">
@@ -26,7 +29,6 @@
     "name": "Hohta Oy",
     "alternateName": ["Hohta", "Hohto"],
     "url": "https://hohta.fi",
-    "logo": "https://hohta.fi/logo.png",
     "description": "Hohta auttaa näyttämään aurinkovoimalan tuotannon selkeästi verkkonäkymässä.",
     "foundingDate": "2026",
     "areaServed": {
@@ -49,10 +51,7 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=35">
+  <link rel="stylesheet" href="styles.css?v=36">
 </head>
 
 <body>
@@ -66,7 +65,7 @@
       <div class="hero-buttons">
         <a class="primary-link" href="#kayttoon">Haluan Hohtan käyttöön</a>
       </div>
-      <p class="hero-price">Hohta-yhteyslaite <strong>600 € + alv kertamaksuna</strong>. Perusnäkymä ilman kuukausimaksua. Mobiililiittymä 6 €/kk, jos haluat laitteen oman verkkosi ulkopuolelle lisäturvan vuoksi. Asennus ja mahdollinen käyttöönottotyö sovitaan erikseen.</p>
+      <p class="hero-price">Hohta-yhteyslaite <strong>600 € + alv kertamaksuna</strong>. Perusnäkymä ilman kuukausimaksua. Mobiililiittymä 6 €/kk (sis. alv), jos haluat laitteen oman verkkosi ulkopuolelle lisäturvan vuoksi. Asennus ja mahdollinen käyttöönottotyö sovitaan erikseen.</p>
     </div>
   </div>
 </section>
@@ -108,7 +107,7 @@
   <section id="paketit" class="package-overview fade-in">
     <div class="section-content">
       <h2>Löydä omaan kohteeseesi sopiva ratkaisu</h2>
-      <p>Peruspaketti tuo yhden yhteensopivan invertterin tuotantotehon ja kokonaistuoton infonäytöllesi. Hohta-yhteyslaitteen kertahinta on <strong>600 € + alv</strong>, ja perusnäkymää käytät ilman kuukausimaksua. Halutessasi erillisen mobiililiittymän hinta on 6 €/kk.</p>
+      <p>Peruspaketti tuo yhden yhteensopivan invertterin tuotantotehon ja kokonaistuoton infonäytöllesi. Hohta-yhteyslaitteen kertahinta on <strong>600 € + alv</strong>, ja perusnäkymää käytät ilman kuukausimaksua. Halutessasi erillisen mobiililiittymän hinta on 6 €/kk (sis. alv).</p>
       <p>Koulut, voittoa tavoittelemattomat yhteisöt ja muut oppilaitokset voivat pyytää tarjouksen.</p>
       <p>Jos tarvitset useita inverttereitä, omaa ilmettä, historiatietoja tai muita lisäominaisuuksia, tutustu Premiumiin ja kohdekohtaisiin laajennuksiin.</p>
       <a class="text-link package-link" href="palvelukuvaus.html">Tutustu paketteihin ja hintoihin <span aria-hidden="true">→</span></a>
@@ -122,8 +121,9 @@
           <span class="dashboard-frame-title">Esimerkkidemo</span>
           <span class="dashboard-live"><span class="dashboard-live-dot" aria-hidden="true"></span> LIVE</span>
         </div>
-        <iframe class="dashboard-embed" src="https://graphs.hohta.fi/?display=inverter-demo" title="Esimerkkidemo: aurinkotuotannon live-näkymä" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <iframe class="dashboard-embed" aria-describedby="dashboard-note" src="https://graphs.hohta.fi/?display=inverter-demo" title="Esimerkkidemo: aurinkotuotannon live-näkymä" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
+      <p class="dashboard-caption" id="dashboard-note">Simuloitua esimerkkidataa. <a class="text-link" href="https://graphs.hohta.fi/?display=inverter-demo" target="_blank" rel="noopener">Avaa demo uudessa välilehdessä</a>.</p>
     </div>
   </section>
 
@@ -146,7 +146,7 @@
         <div class="faq-item">
           <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">Mitä peruspaketti maksaa?</button>
           <div class="faq-answer" id="faq-answer-3" hidden>
-            <p>Hohta-yhteyslaitteen kertahinta on 600 € + alv. Perusnäkymässä ei ole kuukausimaksua. Halutessasi erillisen mobiililiittymän hinta on 6 €/kk. Koulut, voittoa tavoittelemattomat yhteisöt ja muut oppilaitokset voivat pyytää tarjouksen. Asennus, mahdollinen käyttöönottotyö ja toimituskulut sovitaan erikseen ennen tilausta.</p>
+            <p>Hohta-yhteyslaitteen kertahinta on 600 € + alv. Perusnäkymässä ei ole kuukausimaksua. Halutessasi erillisen mobiililiittymän hinta on 6 €/kk (sis. alv). Koulut, voittoa tavoittelemattomat yhteisöt ja muut oppilaitokset voivat pyytää tarjouksen. Asennus, mahdollinen käyttöönottotyö ja toimituskulut sovitaan erikseen ennen tilausta.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -164,7 +164,7 @@
         <div class="faq-item">
           <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6">Tarvitaanko mobiililiittymä?</button>
           <div class="faq-answer" id="faq-answer-6" hidden>
-            <p>Tiedonkeruussa voidaan käyttää kohteen internetyhteyttä tai omaa mobiililiittymääsi. Hohtan järjestämä mobiililiittymä maksaa 6 €/kk. Se pitää laitteen oman verkkosi ulkopuolella lisäturvan vuoksi.</p>
+            <p>Tiedonkeruussa voidaan käyttää kohteen internetyhteyttä tai omaa mobiililiittymääsi. Hohtan järjestämä mobiililiittymä maksaa 6 €/kk (sis. alv). Se pitää laitteen oman verkkosi ulkopuolella lisäturvan vuoksi.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -188,9 +188,12 @@
       <h2>Hohta käyttöön</h2>
       <p id="enquiry-intro">Jätä yhteystietosi, niin otamme sinuun yhteyttä ja katsomme, miten Hohta sopii kohteeseesi. Invertterin tietoja ei tarvitse tietää vielä.</p>
 
+      <p id="enquiry-error" class="form-error" role="alert" hidden>Viestiä ei voitu lähettää. Yritä uudelleen tai kirjoita osoitteeseen <a class="text-link" href="mailto:niklas@hohta.fi">niklas@hohta.fi</a>.</p>
       <form id="enquiry-form" class="contact-form" action="https://submit-form.com/gGmWwBq7v" method="POST">
         <input type="hidden" name="_redirect" value="https://hohta.fi/?submitted=1#kiitos">
-        <input type="hidden" name="_subject" value="Hohta – yhteydenottopyyntö">
+        <input type="hidden" name="_error" value="https://hohta.fi/?submitted=0#kayttoon">
+        <input type="hidden" name="_append" value="false">
+        <input type="hidden" name="_email.subject" value="Hohta – yhteydenottopyyntö">
 
         <div class="form-group">
           <label for="enquiry-name">Nimi <span aria-hidden="true">*</span></label>
@@ -201,7 +204,7 @@
           <input id="enquiry-email" name="email" type="email" autocomplete="email" required>
         </div>
         <div class="form-group">
-          <label for="enquiry-company">Yritys</label>
+          <label for="enquiry-company">Organisaatio</label>
           <input id="enquiry-company" name="company" autocomplete="organization">
         </div>
         <div class="form-group">
@@ -220,7 +223,7 @@
         <p>Olemme saaneet yhteystietosi ja palaamme asiaan.</p>
         <p>Haluatko jutella jo nyt? <a class="text-link" href="tel:+358453337271">Soita Niklakselle: 045 333 7271</a>.</p>
       </div>
-      <p class="form-note">Otamme yhteyttä antamiesi tietojen perusteella. Lähettäminen ei sido sinua tilaukseen.</p>
+      <p class="form-note">Käytämme tietojasi yhteydenottoosi vastaamiseen. Lähettäminen ei sido sinua tilaukseen. <a class="text-link" href="/tietosuoja">Näin käsittelemme henkilötietojasi</a>.</p>
     </div>
   </section>
 
@@ -234,11 +237,11 @@
     <p>Sähköposti: <a class="text-link" href="mailto:niklas@hohta.fi">niklas@hohta.fi</a></p>
     <p>Puhelin: <a class="text-link" href="tel:+358453337271">045 333 7271</a></p>
     <p>Peltolankatu 11 As. 12, 80220 Joensuu</p>
-    <p class="footer-links"><a class="text-link" href="palvelukuvaus.html">Pakettien tarkemmat tiedot</a></p>
+    <p class="footer-links"><a class="text-link" href="palvelukuvaus.html">Pakettien tarkemmat tiedot</a> <span aria-hidden="true">·</span> <a class="text-link" href="/tietosuoja">Tietosuojaseloste</a></p>
   </div>
   <p class="footer-copyright">© 2026 Hohta Oy. Kaikki oikeudet pidätetään.</p>
 </footer>
 
-<script src="main.js?v=3"></script>
+<script src="main.js?v=4"></script>
 </body>
 </html>

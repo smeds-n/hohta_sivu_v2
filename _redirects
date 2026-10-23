@@ -1,0 +1,9 @@
+# Preserve contact and confirmation links from the previous website.
+/contact.html /#kayttoon 301
+/contact /#kayttoon 301
+/en/contact.html /en/#get-started 301
+/en/contact /en/#get-started 301
+/kiitos.html /?submitted=1#kiitos 302
+/kiitos /?submitted=1#kiitos 302
+/en/thank-you.html /en/?submitted=1#kiitos 302
+/en/thank-you /en/?submitted=1#kiitos 302

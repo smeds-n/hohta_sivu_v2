@@ -118,18 +118,25 @@
     if (!form) return;
 
     const redirect = form.querySelector('input[name="_redirect"]');
+    const errorRedirect = form.querySelector('input[name="_error"]');
+    const error = document.getElementById('enquiry-error');
     const intro = document.getElementById('enquiry-intro');
     const note = document.querySelector('.form-note');
     const success = document.getElementById('kiitos');
     const params = new URLSearchParams(window.location.search);
 
-    if (redirect) {
+    if (redirect || errorRedirect) {
       const returnUrl = new URL(window.location.href);
       returnUrl.search = '';
       returnUrl.hash = 'kiitos';
       returnUrl.searchParams.set('submitted', '1');
-      redirect.value = returnUrl.toString();
+      if (redirect) redirect.value = returnUrl.toString();
+      returnUrl.searchParams.set('submitted', '0');
+      returnUrl.hash = document.documentElement.lang === 'en' ? 'get-started' : 'kayttoon';
+      if (errorRedirect) errorRedirect.value = returnUrl.toString();
     }
+
+    if (params.get('submitted') === '0' && error) error.hidden = false;
 
     if (params.get('submitted') !== '1' || !success) return;
 
