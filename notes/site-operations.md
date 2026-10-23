@@ -40,7 +40,17 @@ Use the successful `hohta-fi` Cloudflare Pages deployment. Verify the apex and
 retain the previous origin configuration as a rollback reference. Graphs remain
 on their separate subdomain. Backend hardening is managed separately.
 
-The graph server's CSP observed on 2026-10-23 allows framing only by `hohta.fi`
-and `www.hohta.fi`. Preview embeds need their Pages origins explicitly allowed
-by the separate hardening/deployment owner. Do not broaden that policy as a
-side effect of a marketing-site deployment.
+On 2026-10-23, Niklas explicitly authorized framing by this project's Pages
+origins as well as production. The live graph server and backend deployment
+source now allow `https://hohta.fi`, `https://www.hohta.fi`,
+`https://hohta-fi.pages.dev` and `https://*.hohta-fi.pages.dev`. The nginx config
+passed validation as the service user and was gracefully reloaded. Other
+security directives were preserved.
+
+## Delivery verification — 2026-10-23
+
+Niklas authorized one test enquiry. The deployed English form submitted it once
+with marker `HOHTA-DELIVERY-20261023-01`. Formspark accepted it and returned HTTP
+302 to `/en/?submitted=1#kiitos`, with no personal fields in the URL. The success
+state was visible and the error state was hidden. Niklas confirmed receipt at
+`niklas@hohta.fi`. No repeat submission was made.
